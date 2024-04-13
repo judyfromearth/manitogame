@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manito Birthday Checker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Additional styles if needed */
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex items-center justify-center h-screen">
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+            <form id="birthdayForm" class="flex flex-col items-center">
+                <label for="birthdayInput" class="text-lg mb-4">당신의 마니또의 생일은 언제인가요?</label>
+                <input type="text" id="birthdayInput" placeholder="MMDD" class="border-2 border-gray-300 p-2 mb-4 rounded-md w-full">
+                <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">미션보기</button>
+            </form>
+            <div id="errorMessage" class="text-center text-red-500 mt-4 hidden">잘못된 생일입니다!</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('birthdayForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const birthdayInput = document.getElementById('birthdayInput').value;
+            const validBirthdays = {
+                '0331': '장예진',
+                '0604': '구본유',
+                '0419': '류호진',
+                '1030': '신정원',
+                '0110': '정원재',
+                '0129': '최민서',
+                '0222': '박수영',
+                '1028': '심미소',
+                '0211': '배승훈',
+                '0916': '김지현',
+                '0119': '이정준'
+            };
+            const errorMessage = document.getElementById('errorMessage');
+            if (validBirthdays[birthdayInput]) {
+                alert('Redirecting to page: ' + validBirthdays[birthdayInput]);
+                console.log('Redirect to page:', validBirthdays[birthdayInput]);
+                errorMessage.classList.add('hidden');
+            } else {
+                errorMessage.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepero Manito Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/featured/?checkered');
+            background-size: cover;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="card rounded-lg p-8 shadow-lg max-w-sm mx-auto">
+        <h1 class="text-4xl font-bold mb-4 text-center">Pepero Manito</h1>
+        <p class="text-xl text-center mb-6">당신의 마니또는?</p>
+        <div class="mb-6">
+            <img src="https://source.unsplash.com/featured/?group" alt="Group photo" class="rounded-lg shadow-md">
+        </div>
+        <button onclick="nextPage()" class="bg-pink-300 hover:bg-pink-400 text-white font-bold py-2 px-4 rounded-full w-full transition duration-300 ease-in-out">
+            start!
+        </button>
+    </div>
+
+    <script>
+        function nextPage() {
+            window.location.href = 'manito-reveal.html';
+        }
+    </script>
+</body>
+</html>
